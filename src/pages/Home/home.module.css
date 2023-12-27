@@ -1,0 +1,34 @@
+.enter_game {
+    width: 300px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 479px) {
+    .enter_game {
+        width: 100%;
+    }
+}
+
+.paragraph title-center {
+    color: red;
+}
+
+.main-section {
+    background-image: url('../Home/images/background.jpg');
+    background-size: cover;
+    /* opacity: 0.5; */
+    color: rgb(39, 39, 39);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+  /* Add specific overlay styles for the Tutorial section */
+.tutorial-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  }
+  
