@@ -73,11 +73,16 @@ function Game() {
                         classNames={{game_ui: cls.ui, minimap: cls.minimap, place_point: cls.place_point}}
                         {...{getParams, utils, realPos, guessPos, markers, setGuessPos, setGameEnd}}
                     />
+                <div className={cls.fullScreenImages}>    
                     <PanoramaCustom
-                        className={`${cls.pano} ${cls.minimap}`}
+                        className={`${cls.pano} ${cls.minimap} ${cls.fullScreenImage}`}
                         {...{getParams, utils, realPos}}
                         photo={[Photo1, Photo2, Photo3]}
                     />
+                </div>  
+                <div className={cls.bottomRightMap}>  
+                    <UniversityMap /> 
+                </div>
                 </>
             }
         </div>
