@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import UniversityMap from '../UniversityMap/UniversityMap';
 
 import spbw from '../../utils/spbw';
 import strCut from '../../utils/str-cut';
@@ -58,6 +59,7 @@ function GameResults({ className, map, data }) {
                 <div className="container">
                     <h2 className="title title-center section-title">Results</h2>
                     <div className={cls.map}>{map}</div>
+                    <UniversityMap />
                     <div className={cls.main}>
                         <div>
                             <p className={cls.col}>

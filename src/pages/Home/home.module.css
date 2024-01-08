@@ -18,7 +18,7 @@
     background-size: cover;
     /* opacity: 0.5; */
     color: rgb(39, 39, 39);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 2px rgba(201, 201, 201, 0.699);
     position: relative;
   }
 
@@ -26,9 +26,13 @@
 .tutorial-overlay {
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 5;
+    right: 5;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
-  }
-  
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
+}
+
+.section:nth-child(3) .section-paragraph {
+    color: rgb(255, 228, 75); /* Change to the color you desire */
+}
+

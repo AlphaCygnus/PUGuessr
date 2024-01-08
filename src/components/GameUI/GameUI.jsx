@@ -4,6 +4,7 @@ import Utils from '../GameWidgets/Utils/Utils';
 import Info from '../GameWidgets/Info/Info';
 import Buttons from '../GameWidgets/Buttons/Buttons';
 import Minimap from '../GameWidgets/Minimap/Minimap';
+import UniversityMap from '../UniversityMap/UniversityMap';
 
 function GameUI({ className, utils, minimap, infoData, buttonEvents }) {
     return (
@@ -19,6 +20,7 @@ function GameUI({ className, utils, minimap, infoData, buttonEvents }) {
                 <Buttons events={buttonEvents} />
                 <Minimap {...minimap} />
             </div>
+            <UniversityMap />
         </div>
     );
 }

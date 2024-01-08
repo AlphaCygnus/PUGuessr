@@ -5,6 +5,9 @@ import GameUIGoogle from '../../components/GameUIGoogle/GameUIGoogle';
 import Photo1 from '../../components/Images/20231016_082924.jpg';
 import Photo2 from '../../components/Images/20231017_114106.jpg';
 import Photo3 from '../../components/Images/20231017_164049.jpg';
+import Photo4 from '../../components/Images/20231016_082924crop.jpg';
+import Photo5 from '../../components/Images/20231017_114106crop.jpg';
+import Photo6 from '../../components/Images/20231017_164049crop.jpg';
 import UniversityMap from '../../components/UniversityMap/UniversityMap';
 
 import readableTime from '../../utils/readable/readable-time';
@@ -72,17 +75,16 @@ function Game() {
                     <GameUIGoogle
                         classNames={{game_ui: cls.ui, minimap: cls.minimap, place_point: cls.place_point}}
                         {...{getParams, utils, realPos, guessPos, markers, setGuessPos, setGameEnd}}
+                        UniversityMapComponent={<UniversityMap />}
                     />
+
                 <div className={cls.fullScreenImages}>    
                     <PanoramaCustom
                         className={`${cls.pano} ${cls.minimap} ${cls.fullScreenImage}`}
                         {...{getParams, utils, realPos}}
-                        photo={[Photo1, Photo2, Photo3]}
+                        photo={[Photo1, Photo2, Photo3, Photo4, Photo5, Photo6]}
                     />
                 </div>  
-                <div className={cls.bottomRightMap}>  
-                    <UniversityMap /> 
-                </div>
                 </>
             }
         </div>
