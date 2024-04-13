@@ -2,12 +2,15 @@ import {useState, useRef, useEffect} from 'react';
 
 import GameResultsGoogle from '../../components/GameResultsGoogle/GameResultsGoogle';
 import GameUIGoogle from '../../components/GameUIGoogle/GameUIGoogle';
-import Photo1 from '../../components/Images/20231016_082924.jpg';
-import Photo2 from '../../components/Images/20231017_114106.jpg';
-import Photo3 from '../../components/Images/20231017_164049.jpg';
-import Photo4 from '../../components/Images/20231016_082924crop.jpg';
-import Photo5 from '../../components/Images/20231017_114106crop.jpg';
-import Photo6 from '../../components/Images/20231017_164049crop.jpg';
+import Photo1 from '../../components/Images/20231016_082924crop.jpg';
+import Photo2 from '../../components/Images/20231017_114106crop.jpg';
+import Photo3 from '../../components/Images/20231017_164049crop.jpg';
+import Photo4 from '../../components/Images/20231017_165012.jpg';
+import Photo5 from '../../components/Images/20231017_165244crop.jpg';
+import Photo6 from '../../components/Images/20231017_165442crop.jpg';
+import Photo7 from '../../components/Images/20231017_165749crop.jpg';
+import Photo8 from '../../components/Images/20231124_100139crop.jpg';
+
 import UniversityMap from '../../components/UniversityMap/UniversityMap';
 
 import readableTime from '../../utils/readable/readable-time';
@@ -64,6 +67,22 @@ function Game() {
         window.onbeforeunload = () => true;
     }, []);
 
+
+    useEffect(() => {
+        // Start the timer if it's enabled
+        if (utils.timer.shown) {
+            utils.timer.itvId = setInterval(() => {
+                utils.timer.nextSec(); // Invoke nextSec to update the timer
+            }, 1000);
+        }
+    
+        // Clean up the interval on unmount or when the game ends
+        return () => {
+            clearInterval(utils.timer.itvId);
+        };
+    }, [utils.timer.shown]);
+
+
     return (
         <div className={cls.game}>
             {gameEnd
@@ -82,7 +101,7 @@ function Game() {
                     <PanoramaCustom
                         className={`${cls.pano} ${cls.minimap} ${cls.fullScreenImage}`}
                         {...{getParams, utils, realPos}}
-                        photo={[Photo1, Photo2, Photo3, Photo4, Photo5, Photo6]}
+                        photo={[Photo1, Photo2, Photo3, Photo4, Photo5, Photo6, Photo7, Photo8]}
                     />
                 </div>  
                 </>

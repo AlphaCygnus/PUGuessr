@@ -51,12 +51,59 @@
 
 // export default UniversityMap;
 
+// import React, { useEffect, useRef } from 'react';
+// import * as maptilersdk from '@maptiler/sdk';
+
+// function UniversityMap({ onMapClick, guessPos, guessPinImage }) {
+//   const mapContainerRef = useRef(null);
+//   const mapInstanceRef = useRef(null);
+
+//   useEffect(() => {
+//     maptilersdk.config.apiKey = 'Qh8CN7uAczHuCLkm1jkR';
+//     const map = new maptilersdk.Map({
+//       container: mapContainerRef.current,
+//       style: maptilersdk.MapStyle.STREETS,
+//       center: [79.85387412226262, 12.02541221026454],
+//       zoom: 12.5,
+//     });
+
+//     mapInstanceRef.current = map;
+
+//     if (onMapClick && typeof onMapClick === 'function') {
+//       map.on('click', (e) => {
+//         const clickedCoordinates = e.lngLat.toArray();
+//         onMapClick(clickedCoordinates);
+//       });
+//     }
+
+//     return () => {
+//       if (mapInstanceRef.current) {
+//         mapInstanceRef.current.remove();
+//       }
+//     };
+//   }, [onMapClick]);
+
+//   useEffect(() => {
+//     if (mapInstanceRef.current && guessPos) {
+//       // Place the guess-pin if guessPos is available
+//       mapInstanceRef.current.placePin(guessPos, guessPinImage);
+//     }
+//   }, [guessPos, guessPinImage]);
+
+//   return <div ref={mapContainerRef} style={{ width: '100%', height: '400px' }} />;
+// }
+
+// export default UniversityMap;
+
+
 import React, { useEffect, useRef } from 'react';
+import { Marker } from '@maptiler/sdk';
 import * as maptilersdk from '@maptiler/sdk';
 
 function UniversityMap({ onMapClick, guessPos, guessPinImage }) {
   const mapContainerRef = useRef(null);
   const mapInstanceRef = useRef(null);
+  const markerRef = useRef(null);
 
   useEffect(() => {
     maptilersdk.config.apiKey = 'Qh8CN7uAczHuCLkm1jkR';
@@ -85,8 +132,11 @@ function UniversityMap({ onMapClick, guessPos, guessPinImage }) {
 
   useEffect(() => {
     if (mapInstanceRef.current && guessPos) {
-      // Place the guess-pin if guessPos is available
-      mapInstanceRef.current.placePin(guessPos, guessPinImage);
+      if (markerRef.current) {
+        markerRef.current.setLngLat(guessPos);
+      } else {
+        markerRef.current = new Marker(mapInstanceRef.current).setLngLat(guessPos).setIcon(guessPinImage);
+      }
     }
   }, [guessPos, guessPinImage]);
 
@@ -94,5 +144,3 @@ function UniversityMap({ onMapClick, guessPos, guessPinImage }) {
 }
 
 export default UniversityMap;
-
-

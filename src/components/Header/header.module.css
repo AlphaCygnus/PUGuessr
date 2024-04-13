@@ -25,7 +25,7 @@
 }
 
 .logo:before {
-    background: url('../../assets/img/logo.png') no-repeat 50% 50%;
+    background: url('../../assets/img/favicon.png') no-repeat 50% 50%;
     content: '';
     display: block;
     filter: invert(100%) var(--white-color-transform);
