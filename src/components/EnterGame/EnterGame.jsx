@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Dropdown from '../UI/Dropdown/Dropdown';
@@ -31,6 +31,12 @@ function EnterGame({ className }) {
             } else setPrefOpened(true);
         }
         evt.preventDefault();
+    };
+
+    const [showLobbyOptions, setShowLobbyOptions] = useState(false);
+
+    const handleMultiplayerClick = () => {
+      setShowLobbyOptions(true);
     };
 
     return (
@@ -66,6 +72,13 @@ function EnterGame({ className }) {
                     <Button type="submit" className="special block">Start</Button>
                 </div>
             </form>
+            
+            <div className={cls.multiplayer_section}>
+                <p className={cls.invite_text}>Invite your friends to play together!</p>
+                <Button onClick={handleMultiplayerClick} className={spbw(cls.multiplayer_button, 'special', 'block')}>
+                    Multiplayer
+                </Button>
+            </div>
         </div>
     );
 }

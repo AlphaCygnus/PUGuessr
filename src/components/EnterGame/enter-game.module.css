@@ -4,3 +4,8 @@
 .form_item {
     margin: 15px auto;
 }
+
+.enter_game .invite_text {
+    font-size: 22px !important;
+    margin-bottom: 15px;
+}

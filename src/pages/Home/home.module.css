@@ -1,3 +1,5 @@
+/* home.module.css */
+
 .enter_game {
     width: 300px;
     margin: 0 auto;
@@ -9,8 +11,8 @@
     }
 }
 
-.paragraph title-center {
-    color: red;
+.title-center {
+    color: red; /* Corrected selector for title-center class */
 }
 
 .main-section {
@@ -18,21 +20,16 @@
     background-size: cover;
     /* opacity: 0.5; */
     color: rgb(39, 39, 39);
-    text-shadow: 1px 1px 1px rgba(201, 201, 201, 0.699);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     position: relative;
-  }
+}
 
-  /* Add specific overlay styles for the Tutorial section */
+/* Add specific overlay styles for the Tutorial section */
 .tutorial-overlay {
     position: absolute;
     top: 0;
-    left: 5;
-    right: 5;
+    left: 0;
+    right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
 }
-
-.section:nth-child(3) .section-paragraph {
-    color: rgb(255, 228, 75); /* Change to the color you desire */
-}
-

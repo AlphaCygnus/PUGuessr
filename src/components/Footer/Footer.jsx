@@ -55,6 +55,7 @@ function Footer() {
                 </div>
             </div>
             <div className={cls.part_bottom}>
+                <div className="sharethis-inline-share-buttons"></div>
                 <div className={spbw('container', cls.container)}>
                     <p>
                         &copy; 2023 PUGuessr

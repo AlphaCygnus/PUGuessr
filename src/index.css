@@ -51,7 +51,8 @@ button, input, textarea {
     font-family: inherit;
 }
 .txt-min {
-    font-size: 0.7em;
+    font-size: 0.5em;
+    font-style: italic;
 }
 .img-inv {
     filter: invert(1);

@@ -16,10 +16,11 @@ import gameConfig from '../../config/game.json';
 import cls from './game-results.module.css';
 
 const formulas = `
-You can scroll this message.
-The formulas could be shortened but they are not - to better understand their sense.
+Distance between two coordinates is calculated using the Haversine formula.
+Haversine formula:	a = sin²(Δφ/2) + cos φ1 ⋅ cos φ2 ⋅ sin²(Δλ/2)
 
-[Formulas]
+where φ is latitude, λ is longitude, R is earths radius (mean radius = 6,371km);
+
 
 Guess accuracy (A):
  A = 1 - D / (E / 4); A ≥ 0;

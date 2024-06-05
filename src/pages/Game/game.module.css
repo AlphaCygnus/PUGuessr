@@ -1,62 +1,65 @@
 .game {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
 }
+
 .ui {
-    color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .pano {
-    position: relative;
-    z-index: 99;
-    width: 100%;
-    height: 100vh;
+  position: relative;
+  z-index: 99;
+  width: 100%;
+  height: 100vh;
 }
+
 .minimap {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
+
 .place_point,
 .place_point * {
-    cursor: crosshair;
+  cursor: crosshair;
 }
 
 .fullScreenImages {
-    position: relative;
-    flex: 1;
-    overflow: hidden;
-  }
-  
-  .fullScreenImage {
-    width: 100%;
-    object-fit: cover; /* Maintain aspect ratio for images */
-  }
-  
-  .bottomRightMap {
-    position: relative;
-    flex: 1;
-    width: 25%; /* Adjust the width of the map container */
-    height: 25%; /* Adjust the height of the map container */
-    right: 0;
-    bottom: 0;
-  }
-  
-  /* UniversityMap.css */
-  /* Ensure the UniversityMap component's container fits within the bottomRightMap container */
-  #map {
-    width: 100%;
-    height: 100%;
-  }
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.fullScreenImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure the image is scaled down to fit the container while maintaining its aspect ratio */
+  object-position: center;  /*Center the image within the container */
+}
+
+.bottomRightMap {
+  position: relative;
+  flex: 1;
+  width: 25%; /* Adjust the width of the map container */
+  height: 25%; /* Adjust the height of the map container */
+  right: 0;
+  bottom: 0;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}

@@ -26,46 +26,18 @@
 
 // export default PanoramaCustom;
 
-// import React, { useEffect, useState } from 'react';
-
-// function PanoramaCustom({ photo }) {
-//   const [randomImage, setRandomImage] = useState(null);
-
-//   useEffect(() => {
-//     const randomIndex = Math.floor(Math.random() * photo.length);
-//     setRandomImage(photo[randomIndex]);
-//   }, [photo]);
-
-//   return (
-//     <div>
-//       {randomImage && <img src={randomImage} alt={`Random Photo`} />}
-//     </div>
-//   );
-// }
-
-// export default PanoramaCustom;
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import cls from '../../pages/Game/game.module.css'; // Make sure to import the CSS module
 
 function PanoramaCustom({ photo }) {
-  const [randomImage, setRandomImage] = useState(null);
-
-  useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * photo.length);
-    setRandomImage(photo[randomIndex]);
-  }, [photo]);
-
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      {randomImage && (
-        <img
-          src={randomImage}
-          alt={`Random Photo`}
-          style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
-        />
-      )}
+    <div className={cls.fullScreenImages}>
+      {photo.map((image, index) => (
+        <img key={index} src={image} alt={`Photo ${index + 1}`} className={cls.fullScreenImage} />
+      ))}
     </div>
   );
 }
 
 export default PanoramaCustom;
+

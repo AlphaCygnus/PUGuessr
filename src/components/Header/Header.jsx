@@ -2,11 +2,12 @@ import {Link} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import PropTypes from 'prop-types';
 import {useRef} from 'react';
+import React from "react";
 
 import spbw from '../../utils/spbw';
 import cls from './header.module.css';
 
-function Header({ href, label }) {
+function Header({ href, label, showLogout, handleSignOut }) {
     const clct = useRef(0);
     const dispatch = useDispatch();
     const clhd = () => {
@@ -16,10 +17,18 @@ function Header({ href, label }) {
     return (
         <header className={cls.header}>
             <div className={spbw('container', cls.container)}>
-                <p className={cls.logo}>PUGuessr <span className="txt-min" onClick={clhd}>clone</span></p>
+                <p className={cls.logo}>PUGuessr <span className="txt-min" onClick={clhd}>for PU students</span></p>
                 <div className={cls.label}>
                     <Link to={href}>{label}</Link>
                 </div>
+                      <div className="header-content">
+        <a href={href}>{label}</a>
+        {showLogout && (
+          <div className="logout-btn" onClick={handleSignOut}>
+            Log Out
+          </div>
+        )}
+      </div>
             </div>
         </header>
     );
